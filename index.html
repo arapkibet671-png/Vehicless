@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Credit Platform | East & Southern Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Horizontal Stepper Progress Tracking Header -->
+        <header class="stepper-header">
+            <div class="step-node active" id="node-1">1<span class="step-label">Location</span></div>
+            <div class="step-line" id="line-1"></div>
+            <div class="step-node" id="node-2">2<span class="step-label">Product</span></div>
+            <div class="step-line" id="line-2"></div>
+            <div class="step-node" id="node-3">3<span class="step-label">Details</span></div>
+            <div class="step-line" id="line-3"></div>
+            <div class="step-node" id="node-4">4<span class="step-label">Deposit</span></div>
+            <div class="step-line" id="line-4"></div>
+            <div class="step-node" id="node-5">5<span class="step-label">Status</span></div>
+        </header>
+
+        <!-- Dynamic Content Form Pipeline -->
+        <main class="form-body">
+            
+            <!-- STEP 1: Country Filtering Selection -->
+            <section class="form-step active-step" id="step-1">
+                <h2>Select Your Country</h2>
+                <p class="subtitle">Asset credit limits adjust fluidly to regional currency compliance baselines.</p>
+                <div class="grid-countries">
+                    <div class="card-country" onclick="selectCountry('Kenya', 'KES')">
+                        <span class="flag">🇰🇪</span>
+                        <h3>Kenya</h3>
+                    </div>
+                    <div class="card-country" onclick="selectCountry('Uganda', 'UGX')">
+                        <span class="flag">🇺🇬</span>
+                        <h3>Uganda</h3>
+                    </div>
+                    <div class="card-country" onclick="selectCountry('Tanzania', 'TZS')">
+                        <span class="flag">🇹🇿</span>
+                        <h3>Tanzania</h3>
+                    </div>
+                    <div class="card-country" onclick="selectCountry('Zambia', 'ZMW')">
+                        <span class="flag">🇿🇲</span>
+                        <h3>Zambia</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 2: Product Catalog & Deposit Rule Calculations -->
+            <section class="form-step" id="step-2">
+                <h2>Choose Asset to Finance</h2>
+                <p class="subtitle">Pick an object class below to compute specific structural down-payment requirements.</p>
+                <div class="grid-products">
+                    <div class="card-product" onclick="selectProduct('Smartphone', 18000, 10)">
+                        <span class="icon">📱</span>
+                        <h3>Smartphones</h3>
+                        <p class="deposit-tag">Deposit: 10%</p>
+                    </div>
+                    <div class="card-product" onclick="selectProduct('Bicycle or Motorcycle', 160000, 15)">
+                        <span class="icon">🏍️</span>
+                        <h3>Bikes & Motorcycles</h3>
+                        <p class="deposit-tag">Deposit: 15%</p>
+                    </div>
+                    <div class="card-product" onclick="selectProduct('Vehicle or Car', 1500000, 20)">
+                        <span class="icon">🚗</span>
+                        <h3>Vehicles & Cars</h3>
+                        <p class="deposit-tag">Deposit: 20%</p>
+                    </div>
+                    <div class="card-product" onclick="selectProduct('Kitchen Cabinets Set', 75000, 25)">
+                        <span class="icon">🍳</span>
+                        <h3>Kitchen Cabinets</h3>
+                        <p class="deposit-tag">Deposit: 25%</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 3: Applicant Identity Verification Info -->
+            <section class="form-step" id="step-3">
+                <h2>Applicant Information</h2>
+                <p class="subtitle">Please enter your true legal details for prompt backend verification handling.</p>
+                <div class="input-group">
+                    <label>Full Legal Name</label>
+                    <input type="text" id="app-name" placeholder="E.g., John Doe">
+                </div>
+                <div class="input-group">
+                    <label>National ID / Passport Number</label>
+                    <input type="text" id="app-id" placeholder="Enter identification string">
+                </div>
+                <div class="input-group">
+                    <label>Primary Phone Number</label>
+                    <input type="tel" id="app-phone" placeholder="Contact number">
+                </div>
+            </section>
+
+            <!-- STEP 4: Wallet Selection & PesaPal Engine API Trigger -->
+            <section class="form-step" id="step-4">
+                <h2>Secure Deposit via PesaPal</h2>
+                <p class="subtitle">Confirm payment coordinates to route verification metrics immediately.</p>
+                <div class="delivery-badge">🚚 Free Courier Delivery Covered for All Approved Order Packages!</div>
+                <div class="payment-box">
+                    <div class="summary-line">
+                        <span>Selected Financed Asset:</span> <strong id="summary-asset">-</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Assigned Down Payment:</span> <strong id="summary-deposit" class="accent-text">-</strong>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Mobile Money Wallet Number</label>
+                    <input type="tel" id="wallet-number" placeholder="Enter M-Pesa / MTN / Airtel Money account">
+                </div>
+                <button class="btn-primary btn-pay" onclick="triggerPesaPal()">Process Escrow via PesaPal Secure Gate</button>
+            </section>
+
+            <!-- STEP 5: Telegram Automated Real-time Response Hub -->
+            <section class="form-step" id="step-5">
+                <div class="success-icon">🤖</div>
+                <h2>Connect to Telegram Bot</h2>
+                <p class="subtitle">Your account review session relies on our integrated automated network channel.</p>
+                <p class="info-text">The bot assesses your payment logging transaction receipts to declare quick <strong>Approval ✅</strong> or <strong>Rejection ❌</strong> metrics contextually.</p>
+                <a href="https://t.me/YourCreditFinancingBot?start=verification_handshake" target="_blank" class="btn-telegram">Launch Telegram & Await Broadcast Response</a>
+            </section>
+
+        </main>
+
+        <!-- Navigation Buttons -->
+        <footer class="stepper-footer">
+            <button class="btn-secondary" id="btn-prev" onclick="moveStep(-1)" disabled>Back</button>
+            <button class="btn-primary" id="btn-next" onclick="moveStep(1)">Next Step</button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
