@@ -1,0 +1,12 @@
+{
+  "name": "asset-credit-platform",
+  "version": "1.0.0",
+  "description": "Horizontal asset financing wizard for East & Southern Africa",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
